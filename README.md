@@ -2,7 +2,7 @@
 
 Project 1 for GA SEI.
 
-Try it [here] (https://mountmike.github.io/tic-tac-toe/)
+Try it [here] (https://mountmike.github.io/Tic-Tac-Toe/)
 
 
 
