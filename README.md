@@ -24,6 +24,6 @@ Pseudocode
         -return winner!
 
 Flow diagram
-- asdf
+![Flow Chart 01](../Tic-Tac-Toe/images/Figjam1.png)
 
 
