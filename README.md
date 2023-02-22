@@ -24,6 +24,6 @@ Pseudocode
         -return winner!
 
 Flow diagram
-![Flow Chart 01](../Tic-Tac-Toe/images/Figjam1.png)
+![Flow Chart 01](https://github.com/mountmike/Tic-Tac-Toe/blob/main/images/Figjam1.png)
 
 
