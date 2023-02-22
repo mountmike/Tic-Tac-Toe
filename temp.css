@@ -103,10 +103,10 @@ body {
     color: white;
     box-shadow: -8px 0 #0c1b98, 8px 0 #0c1b98;
 }
-.windows-box-shadow, .minesweeper .content > label {
+.windows-box-shadow, .tictactoe .content > label {
     box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
 }
-.inverse-windows-box-shadow, .minesweeper .content > label:active {
+.inverse-windows-box-shadow, .tictactoe .content > label:active {
     box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;
 }
 #start-button {
@@ -277,7 +277,7 @@ a.desktop-item {
     min-height: 25rem;
 }
 
-.window.minesweeper {
+.window.tictactoe {
     width: 16rem;
     min-width: 16rem;
     height: 23rem;
@@ -654,7 +654,7 @@ textarea:focus {
 #windows-notepad-input-max:checked ~ #all-windows .notepad,
 #windows-trash-input-max:checked ~ #all-windows .trash,
 #windows-documents-input-max:checked ~ #all-windows .documents,
-#windows-minesweeper-input-max:checked ~ #all-windows .minesweeper,
+#windows-tictactoe-input-max:checked ~ #all-windows .tictactoe,
 #windows-update-input-max:checked ~ #all-windows .update,
 #windows-help-input-max:checked ~ #all-windows .help {
     left: -0.5rem;
@@ -668,7 +668,7 @@ textarea:focus {
 #windows-notepad-input:checked ~ #all-windows .notepad,
 #windows-trash-input:checked ~ #all-windows .trash,
 #windows-documents-input:checked ~ #all-windows .documents,
-#windows-minesweeper-input:checked ~ #all-windows .minesweeper,
+#windows-tictactoe-input:checked ~ #all-windows .tictactoe,
 #windows-update-input:checked ~ #all-windows .update,
 #windows-help-input:checked ~ #all-windows .help {
     display: block;
@@ -677,7 +677,7 @@ textarea:focus {
 #windows-notepad-input:checked ~ #start-bar .notepad-tab,
 #windows-trash-input:checked ~ #start-bar .trash-tab,
 #windows-documents-input:checked ~ #start-bar .documents-tab,
-#windows-minesweeper-input:checked ~ #start-bar .minesweeper-tab,
+#windows-tictactoe-input:checked ~ #start-bar .tictactoe-tab,
 #windows-update-input:checked ~ #start-bar .update-tab,
 #windows-help-input:checked ~ #start-bar .help-tab {
     display: flex;
@@ -686,7 +686,7 @@ textarea:focus {
 #windows-notepad-input-min:checked ~ #all-windows .notepad,
 #windows-trash-input-min:checked ~ #all-windows .trash,
 #windows-documents-input-min:checked ~ #all-windows .documents,
-#windows-minesweeper-input-min:checked ~ #all-windows .minesweeper,
+#windows-tictactoe-input-min:checked ~ #all-windows .tictactoe,
 #windows-update-input-min:checked ~ #all-windows .update,
 #windows-help-input-min:checked ~ #all-windows .help {
     display: none;
@@ -695,7 +695,7 @@ textarea:focus {
 #windows-notepad-input:checked ~ #start-bar .notepad-tab,
 #windows-trash-input:checked ~ #start-bar .trash-tab,
 #windows-documents-input:checked ~ #start-bar .documents-tab,
-#windows-minesweeper-input:checked ~ #start-bar .minesweeper-tab,
+#windows-tictactoe-input:checked ~ #start-bar .tictactoe-tab,
 #windows-update-input:checked ~ #start-bar .update-tab,
 #windows-help-input:checked ~ #start-bar .help-tab {
     box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;
@@ -704,7 +704,7 @@ textarea:focus {
 #windows-notepad-input-min:checked ~ #start-bar .notepad-tab,
 #windows-trash-input-min:checked ~ #start-bar .trash-tab,
 #windows-documents-input-min:checked ~ #start-bar .documents-tab,
-#windows-minesweeper-input-min:checked ~ #start-bar .minesweeper-tab,
+#windows-tictactoe-input-min:checked ~ #start-bar .tictactoe-tab,
 #windows-update-input-min:checked ~ #start-bar .update-tab,
 #windows-help-input-min:checked ~ #start-bar .help-tab {
     box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
@@ -713,7 +713,7 @@ textarea:focus {
 #windows-notepad-input-on-top:checked ~ #all-windows .notepad,
 #windows-trash-input-on-top:checked ~ #all-windows .trash,
 #windows-documents-input-on-top:checked ~ #all-windows .documents,
-#windows-minesweeper-input-on-top:checked ~ #all-windows .minesweeper,
+#windows-tictactoe-input-on-top:checked ~ #all-windows .tictactoe,
 #windows-update-input-on-top:checked ~ #all-windows .update,
 #windows-help-input-on-top:checked ~ #all-windows .help {
     z-index: 9999999;
@@ -722,7 +722,7 @@ textarea:focus {
 .hard-show {
     display: block !important;
 }
-.minesweeper .content {
+.tictactoe .content {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -939,7 +939,7 @@ textarea:focus {
     left: 0px
 }
 
-.minesweeper .content > label {
+.tictactoe .content > label {
     cursor: pointer;
     text-align: center;
     font-weight: bold;
@@ -947,7 +947,7 @@ textarea:focus {
     width: 1.25rem;
     height: 1.25rem;
 }
-.minesweeper .content > label:not(.end) {
+.tictactoe .content > label:not(.end) {
     margin: 0 6px 0px 0;
 }
 
