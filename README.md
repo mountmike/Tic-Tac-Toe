@@ -9,21 +9,34 @@ Try it [here] (https://mountmike.github.io/Tic-Tac-Toe/)
 
 
 # Planning process:
+**Phase 1**
 
 Theme
-- Windows 98 (mimic minesweep)
-    - use a library? OS GUI 98 / 98.css?
-    - or DIY?
+- Windows 98 (mimic minesweeper)
+    - use a library (OS GUI 98 / 98.cssor) or DIY?
 
 Pseudocode
-- store data in a matrix
+- store board data in a matrix
 - make grid of blocks (divs) that corelate with matrix
-    - on click target div and update matrix value
-    - toggle between player 1/player 2
-    - check if matrix is equal to a winning pattern
-        -return winner!
+    - on click target div and update matrix value/DOM
+- toggle between player 1/player 2 with boolean variable
+- check if matrix is equal to a winning pattern
+    - return winner!
+
 
 Flow diagram
 ![Flow Chart 01](https://github.com/mountmike/Tic-Tac-Toe/blob/main/images/Figjam1.png)
+
+**Phase 2**
+
+Basic code complete that resembles a game of tic tac toe and interacts with DOM somewhat appropriately. Features still lacking though such as:
+
+**Some kind of winning/drawing sequence with the DOM**
+- a popup DIV that becomes visible at the conclusion of each round
+
+**Keeping track of multiple round scores**
+- Minesweeper inspired GUI for displaying the score count for each player
+- DOM interactions that make it really clear who's turn it currently is
+
 
 
