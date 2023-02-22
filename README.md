@@ -16,7 +16,12 @@ Theme
     - or DIY?
 
 Pseudocode
-- asdf
+- store data in a matrix
+- make grid of blocks (divs) that corelate with matrix
+    - on click target div and update matrix value
+    - toggle between player 1/player 2
+    - check if matrix is equal to a winning pattern
+        -return winner!
 
 Flow diagram
 - asdf
