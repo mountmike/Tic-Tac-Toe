@@ -1,10 +1,6 @@
 let player1Turn = true;
 let turns = 0;
-let matrix = [
-    [" ", " ", " ",],
-    [" ", " ", " ",],
-    [" ", " ", " ",]
-]
+let matrix = [];
 let player1 = {
     name: "Player 1",
     score: 0,
@@ -17,6 +13,11 @@ let grid = document.querySelector(".grid");
 let winnerOutput = document.querySelector("#winnerOutput")
 let endOfRoundPopUp = document.querySelector(".end-of-round");
 let winningPatternGrid = document.querySelector(".winning-pattern")
+let playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
+const p1ScoreOutput = document.querySelector("#p1Score");
+const p2ScoreOutput = document.querySelector("#p2Score");
+let matrixWrapper;
+
 
 
 // Creates a grid of DIVS that act as the game board
@@ -59,7 +60,6 @@ function clickHandler(e) {
 // ugly if else function to ascertain if there's a winner
 function checkWinner() {
     turns == 9 ? announceWinner("draw") : null;
-    let winner;
     // check rows
     for (i = 0; i < 3; i++) {
         if (matrix[i][0] == "X" && matrix[i][1] == "X" && matrix[i][2] == "X") {
@@ -95,7 +95,7 @@ function checkWinner() {
             matrix[1][1] = "#";
             matrix[2][2] = "#";
             announceWinner("P1");
-        } else if (matrix[0][0] == "O" && matrix[1][1] == "O" && matrix[2][1] == "O") {
+        } else if (matrix[0][0] == "O" && matrix[1][1] == "O" && matrix[2][2] == "O") {
             matrix[0][0] = "#";
             matrix[1][1] = "#";
             matrix[2][2] = "#";
@@ -121,15 +121,17 @@ function checkWinner() {
 function announceWinner(result) {
     endOfRoundPopUp.style.visibility = "visible"
     if (result === "P1") {
-    winnerOutput.textContent = `The winner is ${player1.name}!`
-    player1.score++
+        player1.score++
+        winnerOutput.textContent = `The winner is ${player1.name}!`
     } else if (result === "P2") {
-        winnerOutput.textContent = `The winner is ${player2.name}!`
         player2.score++
+        winnerOutput.textContent = `The winner is ${player2.name}!`
     } else if (result === "draw") {
         winnerOutput.textContent = `Well that means it's a draw...`
     }
     displayWinningMove(3, 3)
+    p1ScoreOutput.textContent = player1.score;
+    p2ScoreOutput.textContent = player2.score;
 }
 
 function displayWinningMove(rows, cols) {
@@ -150,9 +152,29 @@ function displayWinningMove(rows, cols) {
     })
 }
 
-// init process
-makeGrid(3, 3);
+function resetGrid() {
+    while (winningPatternGrid.firstChild) {
+        winningPatternGrid.removeChild(winningPatternGrid.lastChild);
+    }
+    while (grid.firstChild) {
+        grid.removeChild(grid.lastChild);
+    }
+    endOfRoundPopUp.style.visibility = "hidden";
+    init();
+    turns = 0;
+}
 
-let matrixWrapper = document.querySelectorAll(".grid-item");
+// init/reset process
 
-addCellListeners();
+function init() {
+    makeGrid(3, 3);
+    matrixWrapper = document.querySelectorAll(".grid-item");
+    addCellListeners();
+    matrix = [
+        [" ", " ", " ",],
+        [" ", " ", " ",],
+        [" ", " ", " ",]
+    ]
+}
+
+init()

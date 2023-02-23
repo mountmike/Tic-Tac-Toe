@@ -2,6 +2,11 @@
     border: red 1px solid;
 } */
 
+@font-face {
+    font-family: "LCD";
+    src: url(fonts/DS-DIGI.TTF);
+}
+
 body {
     min-height:95vh;
     display: flex;
@@ -90,7 +95,7 @@ button {
     position: absolute;
     bottom: 10px;
     width: 80%;
-    height: 80%;
+    height: 75%;
     padding-bottom: 10px;
 }
 
@@ -187,11 +192,22 @@ button {
 
 .scoreboard {
     background: black;
-    width: 3.75rem;
+    width: 50%;
     border: 2px inset;
     position: relative;
     margin: 0.5rem;
     height: 2.125rem;
+    font-family: "LCD";
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.scoreboard > p {
+    display: inline;
+    color: red;
+    margin: 5px;
 }
 
 .smiley-face {
