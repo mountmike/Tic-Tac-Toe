@@ -1,6 +1,3 @@
-let player1Turn = true;
-let turns = 0;
-let matrix = [];
 let player1 = {
     name: "Player 1",
     score: 0,
@@ -13,6 +10,9 @@ let player2 = {
     ScoreOutput: document.querySelector("#p2Score"),
     ScoreBackground: document.querySelector(".scoreboard2"),
 }
+let player1Turn = true;
+let turns = 0;
+let matrix = [];
 let grid = document.querySelector(".grid");
 let winnerOutput = document.querySelector("#winnerOutput")
 let endOfRoundPopUp = document.querySelector(".end-of-round");
@@ -59,6 +59,7 @@ function clickHandler(e) {
     }
     player1Turn = !player1Turn;
     e.target.removeEventListener('click', clickHandler);
+    e.target.classList.add("grid-item-clicked")
     checkWinner();
 }
 
