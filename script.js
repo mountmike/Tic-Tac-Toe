@@ -16,6 +16,7 @@ let player2 = {
 let grid = document.querySelector(".grid");
 let winnerOutput = document.querySelector("#winnerOutput")
 let endOfRoundPopUp = document.querySelector(".end-of-round");
+let winningPatternGrid = document.querySelector(".winning-pattern")
 
 
 // Creates a grid of DIVS that act as the game board
@@ -62,32 +63,56 @@ function checkWinner() {
     // check rows
     for (i = 0; i < 3; i++) {
         if (matrix[i][0] == "X" && matrix[i][1] == "X" && matrix[i][2] == "X") {
+            matrix[i][0] = "#";
+            matrix[i][1] = "#";
+            matrix[i][2] = "#";
             announceWinner("P1");
         } else if (matrix[i][0] == "O" && matrix[i][1] == "O" && matrix[i][2] == "O") {
+            matrix[i][0] = "#";
+            matrix[i][1] = "#";
+            matrix[i][2] = "#";
             announceWinner("P2");
         }
     }
     // check cols
     for (i = 0; i < 3; i++) {
         if (matrix[0][i] == "X" && matrix[1][i] == "X" && matrix[2][i] == "X") {
+            matrix[0][i] = "#";
+            matrix[1][i] = "#";
+            matrix[2][i] = "#";
             announceWinner("P1");
         } else if (matrix[0][i] == "O" && matrix[1][i] == "O" && matrix[2][i] == "O") {
+            matrix[0][i] = "#";
+            matrix[1][i] = "#";
+            matrix[2][i] = "#";
             announceWinner("P2");
         }
     }
     // check diags1
     for (i = 0; i < 3; i++) {
         if (matrix[0][0] == "X" && matrix[1][1] == "X" && matrix[2][2] == "X") {
+            matrix[0][0] = "#";
+            matrix[1][1] = "#";
+            matrix[2][2] = "#";
             announceWinner("P1");
         } else if (matrix[0][0] == "O" && matrix[1][1] == "O" && matrix[2][1] == "O") {
+            matrix[0][0] = "#";
+            matrix[1][1] = "#";
+            matrix[2][2] = "#";
             announceWinner("P2");
         }
     }
     // check diags2
     for (i = 0; i < 3; i++) {
         if (matrix[0][2] == "X" && matrix[1][1] == "X" && matrix[2][0] == "X") {
+            matrix[0][2] = "#";
+            matrix[1][1] = "#";
+            matrix[2][0] = "#";
             announceWinner("P1");
         } else if (matrix[0][2] == "O" && matrix[1][1] == "O" && matrix[2][0] == "O") {
+            matrix[0][2] = "#";
+            matrix[1][1] = "#";
+            matrix[2][0] = "#";
             announceWinner("P2");
         }
     }
@@ -104,6 +129,25 @@ function announceWinner(result) {
     } else if (result === "draw") {
         winnerOutput.textContent = `Well that means it's a draw...`
     }
+    displayWinningMove(3, 3)
+}
+
+function displayWinningMove(rows, cols) {
+    winningPatternGrid.style.setProperty('--grid-rows', rows);
+    winningPatternGrid.style.setProperty('--grid-cols', cols);
+    for (c = 0; c < cols; c++) {
+        for (r = 0; r < rows; r++) {
+        let cell = document.createElement("div");
+        cell.textContent = matrix[c][r];
+        winningPatternGrid.appendChild(cell).className = "winning-pattern-cell";
+        }
+    }
+    let grid = document.querySelectorAll(".winning-pattern-cell")
+    grid.forEach(cell => {
+        if (cell.textContent === "#") {
+            cell.style.color = "red";
+        }
+    })
 }
 
 // init process

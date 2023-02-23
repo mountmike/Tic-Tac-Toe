@@ -82,15 +82,24 @@ button {
 }
 
 .end-of-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     z-index: 4;
     visibility: hidden;
     position: absolute;
-    bottom: 100px;
+    bottom: 10px;
     width: 80%;
-    height: 30%;
+    height: 80%;
+    padding-bottom: 10px;
+}
+
+#winnerOutput {
+    margin: 0px;
 }
 
 .end-of-round > button {
+    margin: 0 0 5px 0;
     font-weight: 100;
     padding: 5px 10px;
     box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
@@ -98,6 +107,30 @@ button {
 
 .end-of-round > button:active {
     box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;
+}
+
+.winning-pattern {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    gap: 1px;
+    margin: 0px;
+}
+  
+.winning-pattern-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+    font-family: "Arial Black", sans-serif;
+
 }
 
 .windows-box-shadow, .tictactoe .content > label {
