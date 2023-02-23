@@ -215,6 +215,12 @@ button {
     font-weight:600;
 }
 
+#close {
+    font-family:"Arial Black", sans-serif;
+    font-weight: bold;
+    font-size: 1;
+}
+
 .smiley-face {
     min-width: 2.125rem;
     height: calc(2.125rem - 4px);
