@@ -174,8 +174,8 @@ function resetGrid() {
         grid.removeChild(grid.lastChild);
     }
     endOfRoundPopUp.style.visibility = "hidden";
-    init();
     turns = 0;
+    init();
 }
 
 // init/reset process
