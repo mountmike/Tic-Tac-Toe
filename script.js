@@ -14,12 +14,18 @@ let player1Turn = true;
 let turns = 0;
 let matrix = [];
 let grid = document.querySelector(".grid");
-let winnerOutput = document.querySelector("#winnerOutput")
-let endOfRoundPopUp = document.querySelector(".end-of-round");
-let winningPatternGrid = document.querySelector(".winning-pattern")
-let playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
+const winnerOutput = document.querySelector("#winnerOutput")
+const endOfRoundPopUp = document.querySelector(".end-of-round");
+const winningPatternGrid = document.querySelector(".winning-pattern")
+const playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
+const closeBtn = document.querySelector("#closeBtn")
+const mainWindow = document.querySelector(".window");
 let matrixWrapper;
-let errorSound = new Audio("../sounds/error.mp3");
+const errorSound = new Audio("../sounds/error.mp3");
+
+closeBtn.addEventListener('click', function() {
+    mainWindow.style.visibility = "hidden";
+})
 
 // Creates a grid of DIVS that act as the game board
 function makeGrid(rows, cols) {
