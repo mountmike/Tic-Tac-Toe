@@ -38,5 +38,11 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
 - Minesweeper inspired GUI for displaying the score count for each player
 - DOM interactions that make it really clear who's turn it currently is
 
-
+# Future thoughts
+- As an extra aesthetic feature I would love to have the screen mimic the Windows desktop environment and be able to launch the .exe, minimize, maximise and close it.
+- It would also be cool to have the old *file* menu bar on the window which would unlock extra settings such as:
+    - Custom player names/avatar 
+    - Different game modes (such as speed round where you have 3 seonds to win)
+    - Different board sizes
+- It would also be great to add some kind of local/session storage for saving a game.
 

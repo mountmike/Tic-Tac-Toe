@@ -4,21 +4,21 @@ let matrix = [];
 let player1 = {
     name: "Player 1",
     score: 0,
+    ScoreOutput: document.querySelector("#p1Score"),
+    ScoreBackground: document.querySelector(".scoreboard1"),
 }
 let player2 = {
     name: "Player 2",
     score: 0,
+    ScoreOutput: document.querySelector("#p2Score"),
+    ScoreBackground: document.querySelector(".scoreboard2"),
 }
 let grid = document.querySelector(".grid");
 let winnerOutput = document.querySelector("#winnerOutput")
 let endOfRoundPopUp = document.querySelector(".end-of-round");
 let winningPatternGrid = document.querySelector(".winning-pattern")
 let playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
-const p1ScoreOutput = document.querySelector("#p1Score");
-const p2ScoreOutput = document.querySelector("#p2Score");
 let matrixWrapper;
-
-
 
 // Creates a grid of DIVS that act as the game board
 function makeGrid(rows, cols) {
@@ -45,10 +45,14 @@ function clickHandler(e) {
     let userSelectionRow = e.target.dataset.matrixRow;
     let userSelectionCol = e.target.dataset.matrixCol;
     if (player1Turn) {
+        player1.ScoreBackground.style.backgroundColor = "black";
+        player2.ScoreBackground.style.backgroundColor = "yellow";
         e.target.innerText = "X";
         matrix[userSelectionRow][userSelectionCol] = "X"
 
     } else {
+        player2.ScoreBackground.style.backgroundColor = "black";
+        player1.ScoreBackground.style.backgroundColor = "yellow";
         e.target.innerText = "O";
         matrix[userSelectionRow][userSelectionCol] = "O"
     }
@@ -123,15 +127,16 @@ function announceWinner(result) {
     if (result === "P1") {
         player1.score++
         winnerOutput.textContent = `The winner is ${player1.name}!`
+        displayWinningMove(3, 3)
     } else if (result === "P2") {
         player2.score++
         winnerOutput.textContent = `The winner is ${player2.name}!`
+        displayWinningMove(3, 3)
     } else if (result === "draw") {
         winnerOutput.textContent = `Well that means it's a draw...`
     }
-    displayWinningMove(3, 3)
-    p1ScoreOutput.textContent = player1.score;
-    p2ScoreOutput.textContent = player2.score;
+    player1.ScoreOutput.textContent = player1.score;
+    player2.ScoreOutput.textContent = player2.score;
 }
 
 function displayWinningMove(rows, cols) {
