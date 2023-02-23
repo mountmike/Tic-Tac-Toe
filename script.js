@@ -19,6 +19,7 @@ let endOfRoundPopUp = document.querySelector(".end-of-round");
 let winningPatternGrid = document.querySelector(".winning-pattern")
 let playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
 let matrixWrapper;
+let errorSound = new Audio("sounds/error.mp3");
 
 // Creates a grid of DIVS that act as the game board
 function makeGrid(rows, cols) {
@@ -123,6 +124,7 @@ function checkWinner() {
 }
 
 function announceWinner(result) {
+    errorSound.play();
     endOfRoundPopUp.style.visibility = "visible"
     if (result === "P1") {
         player1.score++
