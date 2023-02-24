@@ -40,7 +40,7 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
 
 **Adding sound FX**
 **Saving score between refreshes**
-- research localStorage and added function to save scores, but now needs reset score capability
+- researched localStorage and added function to save scores, but now needs reset score capability
 
 # Future thoughts
 - As an extra aesthetic feature I would love to have the screen mimic the Windows desktop environment and be able to launch the .exe, minimize, maximise and close it.
