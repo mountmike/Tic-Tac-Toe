@@ -20,11 +20,27 @@ const endOfRoundPopUp = document.querySelector(".end-of-round");
 const winningPatternGrid = document.querySelector(".winning-pattern")
 const playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
 const closeBtn = document.querySelector("#closeBtn")
-const mainWindow = document.querySelector(".window");
+const nameChangeWindow = document.querySelector(".namechange");
+const updateP1Name = document.querySelector("#updateP1Name");
+const updateP2Name = document.querySelector("#updateP2Name");
+const p1NameInput = document.querySelector("#p1NameInput")
+const p2NameInput = document.querySelector("#p2NameInput")
+const p1NameOutput = document.querySelector("#p1NameOutput");
+const p2NameOutput = document.querySelector("#p2NameOutput");
 const errorSound = new Audio("../sounds/error.mp3");
 
 closeBtn.addEventListener('click', function() {
-    mainWindow.style.visibility = "hidden";
+    nameChangeWindow.style.visibility = "hidden";
+})
+
+updateP1Name.addEventListener('click', function () {
+     player1.name = p1NameInput.value;
+     p1NameOutput.textContent = player1.name;
+})
+
+updateP2Name.addEventListener('click', function () {
+    player2.name = p2NameInput.value;
+    p2NameOutput.textContent = player2.name;
 })
 
 // Creates a grid of DIVS that act as the game board
@@ -188,6 +204,10 @@ function newGame() {
     resetGrid();
 }
 
+function nameChange() {
+    nameChangeWindow.style.visibility = "visible";
+}
+
 // check and update local storage for score
 function checkLocalStorage() {
     localStorage.getItem('player1Score') ? player1.score = localStorage.getItem('player1Score') : player1.score = 0;
@@ -208,6 +228,8 @@ function init() {
         [" ", " ", " ",]
     ]
     checkLocalStorage();
+    p1NameOutput.textContent = player1.name;
+    p2NameOutput.textContent = player2.name;
 }
 
 init()

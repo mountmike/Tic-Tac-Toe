@@ -34,7 +34,7 @@ button {
     background: #b9b9b9;
     overflow: hidden;
     position: relative;
-    width: 500px;
+    width: 460px;
     height: 560px;
 }
 
@@ -82,11 +82,51 @@ button {
     width: 100%;
 }
 
+.namechange {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    visibility: hidden;
+    position: absolute;
+    margin: 40%;
+    width: 60%;
+    height: 30%;
+    padding-bottom: 10px;
+}
+
+.name-change-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.name-input {
+    display: inline;
+    height: 30px;
+}
+
+.update-name-btn {
+    display: inline;
+    width: 65px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    font-weight: 100;
+    box-shadow: -2px -2px #e0dede, -2px 0 #e0dede, 0 -2px #e0dede, -4px -4px white, -4px 0 white, 0 -4px white, 2px 2px #818181, 0 2px #818181, 2px 0 #818181,  2px -2px #e0dede, -2px 2px #818181, -4px 2px white, -4px 4px black, 4px 4px black, 4px 0 black, 0 4px black, 2px -4px white, 4px -4px black;
+}
+
+.update-name-btn:active {
+    box-shadow: -2px -2px #818181, -2px 0 #818181, 0 -2px #818181, -4px -4px black, -4px 0 black, 0 -4px black, 2px 2px #e0dede, 0 2px #e0dede, 2px 0 #e0dede,  2px -2px #818181, -2px 2px #e0dede, -4px 2px black, -4px 4px white, 4px 4px white, 4px 0 white, 0 4px white, 2px -4px black, 4px -4px white;
+}
+
 .end-of-round {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    z-index: 4;
+    z-index: 2;
     visibility: hidden;
     position: absolute;
     bottom: 10px;
@@ -94,6 +134,7 @@ button {
     height: 75%;
     padding-bottom: 10px;
 }
+
 
 #winnerOutput {
     margin: 0px;
@@ -254,7 +295,7 @@ button {
     display: none;
     position: absolute;
     background: #b9b9b9;
-    min-width: 160px;
+    min-width: 170px;
     box-shadow:  1px 1px #818181, 0 1px #818181, 1px 0 #818181,  1px -1px #e0dede, -1px 1px #818181, -1px 1px white, -1px 1px black, 1px 2px black, 1px 0 black, 0 1px black;
     z-index: 9;
     margin: 0px 0 0 -5px;
