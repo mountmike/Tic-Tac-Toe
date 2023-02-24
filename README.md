@@ -43,12 +43,15 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
 # Phase 3
 **Saving score between refreshes**
 - researched localStorage and added function to save scores, but now needs reset score capability
+- Adding old *file* menu bar on the window which would unlock extra settings such as:
+    - Custom player names
+    - New game to reset the board and scores.
 
 # Future thoughts
 - As an extra aesthetic feature I would love to have the screen mimic the Windows desktop environment and be able to launch the .exe, minimize, maximise and close it.
-- It would also be cool to have the old *file* menu bar on the window which would unlock extra settings such as:
-    - Custom player names/avatar 
+- Add to file menu something like:
     - Different game modes (such as speed round where you have 3 seonds to win)
     - Different board sizes
+
 
 
