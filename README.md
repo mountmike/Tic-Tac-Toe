@@ -8,8 +8,8 @@ Try it [here] (https://mountmike.github.io/Tic-Tac-Toe/)
 
 
 
-# Planning process:
-**Phase 1**
+# **Planning process** | Phase 1
+
 
 Theme
 - Windows 98 (mimic minesweeper)
@@ -27,7 +27,7 @@ Pseudocode
 Flow diagram
 ![Flow Chart 01](https://github.com/mountmike/Tic-Tac-Toe/blob/main/images/Figjam1.png)
 
-**Phase 2**
+# Phase 2
 
 Basic code complete that resembles a game of tic tac toe and interacts with DOM somewhat appropriately. Features still lacking though such as:
 
@@ -39,6 +39,8 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
 - DOM interactions that make it really clear who's turn it currently is
 
 **Adding sound FX**
+
+# Phase 3
 **Saving score between refreshes**
 - researched localStorage and added function to save scores, but now needs reset score capability
 

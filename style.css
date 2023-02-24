@@ -35,7 +35,7 @@ button {
     overflow: hidden;
     position: relative;
     width: 500px;
-    height: 500px;
+    height: 560px;
 }
 
 .grid-wrapper {
@@ -228,3 +228,54 @@ button {
     background-repeat: no-repeat;
     background-position: 0.27rem;
 }
+
+.line {
+    box-shadow: 0 2px #808280, 0 4px white;
+}
+
+.options {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.item {
+    margin: 5px 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    padding: 5px;
+    margin: 0px 10px 0px 0px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #b9b9b9;
+    min-width: 160px;
+    box-shadow:  1px 1px #818181, 0 1px #818181, 1px 0 #818181,  1px -1px #e0dede, -1px 1px #818181, -1px 1px white, -1px 1px black, 1px 2px black, 1px 0 black, 0 1px black;
+    z-index: 1;
+    margin: 0px 0 0 -5px;
+}
+
+.dropdown-content > button {
+    display: block;
+    width: 100%;
+    margin: 0px;
+    text-align: left;
+    padding: 5px 0 5px 5px;
+}
+
+.dropdown-content button:hover {
+    background-color: #000b7c;
+    color: white;
+}
+
+
+.item:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }

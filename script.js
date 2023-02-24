@@ -135,17 +135,17 @@ function announceWinner(result) {
     endOfRoundPopUp.style.visibility = "visible"
     if (result === "P1") {
         player1.score++
-        localStorage.setItem('player1Score', player1.score);
         winnerOutput.textContent = `The winner is ${player1.name}!`
         displayWinningMove(3, 3)
     } else if (result === "P2") {
         player2.score++
-        localStorage.setItem('player2Score', player2.score);
         winnerOutput.textContent = `The winner is ${player2.name}!`
         displayWinningMove(3, 3)
     } else if (result === "draw") {
         winnerOutput.textContent = `Well that means it's a draw...`
     }
+    localStorage.setItem('player1Score', player1.score);
+    localStorage.setItem('player2Score', player2.score);
     player1.ScoreOutput.textContent = player1.score;
     player2.ScoreOutput.textContent = player2.score;
 }
@@ -180,12 +180,18 @@ function resetGrid() {
     init();
 }
 
+function newGame() {
+    localStorage.removeItem('player1Score');
+    localStorage.removeItem('player2Score');
+    player1.score = 0;
+    player2.score = 0;
+    resetGrid();
+}
+
 // check and update local storage for score
 function checkLocalStorage() {
-    if (localStorage.getItem('player1Score') || localStorage.getItem('player1Score')) {
-        player1.score = localStorage.getItem('player1Score');
-        player2.score = localStorage.getItem('player2Score');
-    } 
+    localStorage.getItem('player1Score') ? player1.score = localStorage.getItem('player1Score') : player1.score = 0;
+    localStorage.getItem('player1Score') ? player2.score = localStorage.getItem('player2Score') : player2.score = 0;
     player1.ScoreOutput.textContent = player1.score;
     player2.ScoreOutput.textContent = player2.score;
 }
