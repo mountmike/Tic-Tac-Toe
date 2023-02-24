@@ -43,7 +43,7 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
 # Phase 3
 **Saving score between refreshes**
 - researched localStorage and added function to save scores, but now needs reset score capability
-- Adding old *file* menu bar on the window which would unlock extra settings such as:
+**Adding old *file* menu bar on the window which would unlock extra settings such as:**
     - Custom player names
     - New game to reset the board and scores.
 
