@@ -13,6 +13,7 @@ let player2 = {
 let player1Turn = true;
 let turns = 0;
 let matrix = [];
+let matrixWrapper;
 let grid = document.querySelector(".grid");
 const winnerOutput = document.querySelector("#winnerOutput")
 const endOfRoundPopUp = document.querySelector(".end-of-round");
@@ -20,7 +21,6 @@ const winningPatternGrid = document.querySelector(".winning-pattern")
 const playAgainBtn = document.querySelector("#playAgainBtn").addEventListener('click', resetGrid);
 const closeBtn = document.querySelector("#closeBtn")
 const mainWindow = document.querySelector(".window");
-let matrixWrapper;
 const errorSound = new Audio("../sounds/error.mp3");
 
 closeBtn.addEventListener('click', function() {
@@ -135,10 +135,12 @@ function announceWinner(result) {
     endOfRoundPopUp.style.visibility = "visible"
     if (result === "P1") {
         player1.score++
+        localStorage.setItem('player1Score', player1.score);
         winnerOutput.textContent = `The winner is ${player1.name}!`
         displayWinningMove(3, 3)
     } else if (result === "P2") {
         player2.score++
+        localStorage.setItem('player2Score', player2.score);
         winnerOutput.textContent = `The winner is ${player2.name}!`
         displayWinningMove(3, 3)
     } else if (result === "draw") {
@@ -178,6 +180,16 @@ function resetGrid() {
     init();
 }
 
+// check and update local storage for score
+function checkLocalStorage() {
+    if (localStorage.getItem('player1Score') || localStorage.getItem('player1Score')) {
+        player1.score = localStorage.getItem('player1Score');
+        player2.score = localStorage.getItem('player2Score');
+    } 
+    player1.ScoreOutput.textContent = player1.score;
+    player2.ScoreOutput.textContent = player2.score;
+}
+
 // init/reset process
 
 function init() {
@@ -189,6 +201,7 @@ function init() {
         [" ", " ", " ",],
         [" ", " ", " ",]
     ]
+    checkLocalStorage();
 }
 
 init()
