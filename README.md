@@ -39,6 +39,8 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
 - DOM interactions that make it really clear who's turn it currently is
 
 **Adding sound FX**
+**Saving score between refreshes**
+- research localStorage and added function to save scores, but now needs reset score capability
 
 # Future thoughts
 - As an extra aesthetic feature I would love to have the screen mimic the Windows desktop environment and be able to launch the .exe, minimize, maximise and close it.
@@ -46,5 +48,5 @@ Basic code complete that resembles a game of tic tac toe and interacts with DOM 
     - Custom player names/avatar 
     - Different game modes (such as speed round where you have 3 seonds to win)
     - Different board sizes
-- It would also be great to add some kind of local/session storage for saving a game.
+
 
