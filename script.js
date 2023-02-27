@@ -29,6 +29,8 @@ const p1NameOutput = document.querySelector("#p1NameOutput");
 const p2NameOutput = document.querySelector("#p2NameOutput");
 const errorSound = new Audio("../sounds/error.mp3");
 
+let drag;
+
 closeBtn.addEventListener('click', function() {
     nameChangeWindow.style.visibility = "hidden";
 })
