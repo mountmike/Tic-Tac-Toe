@@ -29,8 +29,6 @@ const p1NameOutput = document.querySelector("#p1NameOutput");
 const p2NameOutput = document.querySelector("#p2NameOutput");
 const errorSound = new Audio("../sounds/error.mp3");
 
-let drag;
-
 closeBtn.addEventListener('click', function() {
     nameChangeWindow.style.visibility = "hidden";
 })
@@ -38,11 +36,13 @@ closeBtn.addEventListener('click', function() {
 updateP1Name.addEventListener('click', function () {
      player1.name = p1NameInput.value;
      p1NameOutput.textContent = player1.name;
+     localStorage.setItem('player1Name', player1.name);
 })
 
 updateP2Name.addEventListener('click', function () {
     player2.name = p2NameInput.value;
     p2NameOutput.textContent = player2.name;
+    localStorage.setItem('player2Name', player2.name);
 })
 
 // Creates a grid of DIVS that act as the game board
@@ -201,6 +201,8 @@ function resetGrid() {
 function newGame() {
     localStorage.removeItem('player1Score');
     localStorage.removeItem('player2Score');
+    localStorage.removeItem('player1Name');
+    localStorage.removeItem('player2Name');
     player1.score = 0;
     player2.score = 0;
     resetGrid();
@@ -213,7 +215,9 @@ function nameChange() {
 // check and update local storage for score
 function checkLocalStorage() {
     localStorage.getItem('player1Score') ? player1.score = localStorage.getItem('player1Score') : player1.score = 0;
-    localStorage.getItem('player1Score') ? player2.score = localStorage.getItem('player2Score') : player2.score = 0;
+    localStorage.getItem('player2Score') ? player2.score = localStorage.getItem('player2Score') : player2.score = 0;
+    localStorage.getItem('player1Name') ? player1.name = localStorage.getItem('player1Name') : player1.name = "Player 1";
+    localStorage.getItem('player2Name') ? player2.name = localStorage.getItem('player2Name') : player2.name = "Player 2";
     player1.ScoreOutput.textContent = player1.score;
     player2.ScoreOutput.textContent = player2.score;
 }
