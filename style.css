@@ -5,16 +5,13 @@
 
 body {
     min-height:95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background: #008080;
     font-family: Arial, sans-serif;
     user-select: none;
     font-weight: 300;
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
 }
 
 button {
@@ -33,9 +30,9 @@ button {
     align-items: center;
     background: #b9b9b9;
     overflow: hidden;
-    position: relative;
     width: 460px;
     height: 560px;
+    position: absolute;
 }
 
 .grid-wrapper {
